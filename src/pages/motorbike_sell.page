@@ -1,0 +1,33 @@
+<apex:page showHeader="true" sidebar="true" standardController="Motorbike__c" extensions="MotorbikeController">
+	<apex:messages/>
+	<apex:pageBlock title="Motorbike Sell">
+		<apex:pageBlockSection >Are you sure you want to sell this motorbike?</apex:pageBlockSection>
+		<apex:pageBlockSection title="Motorbike Details">
+			<apex:outputField value="{!Motorbike__c.Name}"/>
+			<apex:outputField value="{!Motorbike__c.Engine__c}"/>
+			<apex:outputField value="{!Motorbike__c.Brand__r.Name}"/>
+			<apex:outputField value="{!Motorbike__c.Fuel__c}"/>
+			<apex:outputField value="{!Motorbike__c.Model__r.Name}"/>
+			<apex:outputField value="{!Motorbike__c.Power__c}"/>
+			<apex:outputField value="{!Motorbike__c.Colour__r.Name}"/>
+			<apex:outputField value="{!Motorbike__c.UrbanConsumption__c}"/>
+			<apex:outputField value="{!Motorbike__c.LicenseNumber__c}"/>
+			<apex:outputField value="{!Motorbike__c.ExtraurbanConsumption__c}"/>
+			<apex:outputField value="{!Motorbike__c.Trunk__c}"/>
+		</apex:pageBlockSection>
+		<apex:pageBlockSection title="Motorbike status">
+			<apex:outputField value="{!Motorbike__c.Rented__c}"/>
+			<apex:outputField value="{!Motorbike__c.RentHours__c}"/>
+			<apex:outputField value="{!Motorbike__c.Sold__c}"/>
+		</apex:pageBlockSection>
+		<apex:pageBlockSection title="Sell Price">
+			<apex:outputField value="{!Motorbike__c.Price__c}"/>
+		</apex:pageBlockSection>
+		<apex:pageBlockButtons >
+			<apex:form >
+				<apex:commandButton value="Accept" action="{!sell}"/> 
+				<apex:commandButton value="Cancel" action="{!goBack}"/> 
+			</apex:form>
+		</apex:pageBlockButtons>
+	</apex:pageBlock>
+</apex:page>
